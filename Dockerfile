@@ -77,7 +77,7 @@ RUN source /opt/ros/humble/setup.bash && \
 # Setup uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 ENV UV_LINK_MODE=copy
-RUN echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrc 
+RUN echo 'eval "$(uv generate-shell-completion bash)"' >> /home/$USER_NAME/.bashrc
 #&& make venv
 
 # Add user and group
@@ -195,7 +195,7 @@ RUN source /opt/ros/humble/setup.bash && \
 # Setup uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 ENV UV_LINK_MODE=copy
-RUN echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrc 
+RUN echo 'eval "$(uv generate-shell-completion bash)"' >> /home/$USER_NAME/.bashrc
 #&& make venv
 
 # Add user and group
